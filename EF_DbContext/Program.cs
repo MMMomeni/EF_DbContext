@@ -1,7 +1,11 @@
+using EF_DbContext.Infrastructure.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSqlServer<EfDbContext>(builder.Configuration.GetConnectionString("EF_DbContext"));
 
 var app = builder.Build();
 

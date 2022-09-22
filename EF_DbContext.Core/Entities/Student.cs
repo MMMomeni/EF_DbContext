@@ -13,6 +13,7 @@ namespace EF_DbContext.Core.Entities
         [Required]
         public int Id { get; set; }
         [Required]
+        [RegularExpression("^[a-zA-Z]*$")]
         [Column(TypeName="varchar(256)")]
         public string Name { get; set; }
     }
